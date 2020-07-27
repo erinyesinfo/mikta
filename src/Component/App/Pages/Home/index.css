@@ -1,0 +1,185 @@
+.container {
+    background: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+.container-child { display: flex; }
+.imgProfile-home {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+.profileInfo {
+    display: flex;
+    flex-direction: column;
+}
+.outils-info {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: -10px;
+}
+.acountName {
+    font-family: sans-serif;
+    font-weight: 700;
+    word-wrap: anywhere;
+    margin: 0 10px 0 0;
+}
+.editProfile {
+    background-color: #fff;
+    font-size: 15px;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-right: 5px;
+    cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror /
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */
+    /* not supported by any browser */
+}.editProfile:hover { color: #000;border: 1px solid rgb(160, 160, 160); }
+.more {
+    border: 1px solid #eee;
+    padding: 3px 7px 3px 7px;
+    cursor: pointer;
+    font-size: 15px;
+    background: white;
+}.more:hover { border: 1px solid black; }
+.userLocation-portfolio {
+    display: flex;
+    padding: 10px 0 10px 10px;
+    margin-top: 5px;
+}.userLocation-portfolio-less {
+    display: flex;
+    padding: 10px 0 0 10px;
+    margin-top: 5px;
+}
+.userinstagram-twitter {
+    display: flex;
+    padding-left: 10px;
+}.userinstagram-twitter-extra {
+    display: flex;
+    padding: 10px 0 0 10px;
+    margin-top: 5px;
+}
+.userLocation-portfolio .user:first-of-type, .userLocation-portfolio-less .user:first-of-type, .userinstagram-twitter .user:first-of-type, .userinstagram-twitter-extra .user:first-of-type {
+    margin-right: 30px;
+}
+.userLocation-portfolio .user, .userLocation-portfolio-less .user {
+    color: #818182;
+    align-items: center;
+    cursor: pointer;
+}
+.userinstagram-twitter .user, .userinstagram-twitter-extra .user {
+    color: #818182;
+    align-items: center;
+    cursor: auto;
+}
+.userLocation-portfolio .user a, .userLocation-portfolio-less .user a {
+    text-decoration: none;
+    color: #818182
+}.userLocation-portfolio .user a:hover, .userLocation-portfolio-less .user a:hover { color: black }
+.userinstagram-twitter .user span, .userinstagram-twitter-extra .user span, .userLocation-portfolio .user span, .userLocation-portfolio-less .user span {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror /
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */
+    /* not supported by any browser */
+}
+.outils-description {
+    display: flex;
+    padding: 10px 0 10px 10px;
+}.outils-description div { width: 500px; }
+.outils-interests {
+    display: flex;
+    padding: 10px 0 10px 10px;
+}.outils-interests .outils-interests-container { flex: 1; }
+.outils-interests div div:first-of-type {
+    color: #767676;
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.outils-interests div div:last-of-type {
+    display: flex;
+    flex-wrap: wrap;
+}.outils-interests div div:last-of-type div {
+    padding-bottom: 8px;
+    padding-right: 8px;
+}.outils-interests div div:last-of-type div a {
+    color: #767676;
+    background-color: #eee;
+    display: inline-flex;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 8px;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
+    transition: all .1s ease-in-out;
+    border-radius: 2px;
+    text-decoration: none;
+    cursor: pointer;
+}.outils-interests div div:last-of-type div a:hover { color: #111;background-color: #e1e1e1; }
+a {
+    text-decoration: none;
+    color: #818182
+}
+.container-helper { display: flex; }
+
+
+@media screen and (max-width: 768px) {
+    .container-child { width: 100%; }
+    .outils-description {
+        flex-direction: column;
+    }.outils-description div {
+        width: unset;
+    }
+}
+@media screen and (max-width: 576px) {
+    .container { padding: 10px;justify-content: flex-start; }
+    .container-child {
+        flex-direction: column;
+        width: 100%;
+        margin: 20px 0;
+    }
+    .container-helper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .profileInfo {
+        margin: 20px 0 0 0;
+        width: 100%;
+    }
+    .outils-info {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+        margin-bottom: 0;
+    }
+    .acountName {
+        font-size: 25px;
+        margin: -8px 0 15px;
+    }
+
+    .userLocation-portfolio, .userLocation-portfolio-less, .userinstagram-twitter, .userinstagram-twitter-extra {
+        justify-content: space-between;
+    }
+    .userLocation-portfolio, .userLocation-portfolio-less { padding-bottom: 5px; }
+    .userinstagram-twitter, .userinstagram-twitter-extra { padding: 10px 0; }
+    .userLocation-portfolio .user:first-of-type, .userLocation-portfolio-less .user:first-of-type, .userinstagram-twitter .user:first-of-type, .userinstagram-twitter-extra .user:first-of-type { margin: 0; }
+    .userinstagram-twitter .user:last-of-type, .userinstagram-twitter-extra .user:last-of-type { text-align: end; }
+    .userLocation-portfolio, .userLocation-portfolio-less, .userinstagram-twitter, .userinstagram-twitter-extra, .outils-description, .outils-interests {
+        padding-left: 0;
+    }
+    .outils-description div { margin-right: 0; }
+    .outils-description, .outils-interests { padding: 10px 0; }
+}

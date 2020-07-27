@@ -1,0 +1,162 @@
+@import url(https://fonts.googleapis.com/css?family=Signika:400,700|Courgette);
+
+.signup { width: 700px; }
+.signup form {
+    display: flex;
+    flex-direction: column;
+    max-height: 350px;
+    overflow: auto;
+}
+.signup form .name-field {
+    display: flex;
+    align-items: flex-start;
+}
+.signup form .name-field .input-container { width: 50%; }
+.signup form .name-field .input-container input {
+    width: 80%;
+    outline: none;
+}
+.signup form .input-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.password-strength-meter-container {
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 1.5em;
+    color: #346;
+    font-family: Signika, -apple-system, sans-serif;
+}
+.signup form .input-container:last-of-type meter {
+    /* Reset the default appearance */
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+	width: 100%;
+	max-height: 3px;
+    
+    /* Applicable only to Firefox */
+	background: none;
+	background-color: rgba(0,0,0,0.1);
+}
+
+.signup form .input-container:last-of-type meter::-webkit-meter-bar {
+	background: none;
+	background-color: rgba(0,0,0,0.1);
+}
+
+.signup form .input-container:last-of-type meter[value="1"]::-webkit-meter-optimum-value { background: red; }
+.signup form .input-container:last-of-type meter[value="2"]::-webkit-meter-optimum-value { background: yellow; }
+.signup form .input-container:last-of-type meter[value="3"]::-webkit-meter-optimum-value { background: orange; }
+.signup form .input-container:last-of-type meter[value="4"]::-webkit-meter-optimum-value { background: green; }
+
+.signup form .input-container:last-of-type meter[value="1"]::-moz-meter-bar { background: red; }
+.signup form .input-container:last-of-type meter[value="2"]::-moz-meter-bar { background: yellow; }
+.signup form .input-container:last-of-type meter[value="3"]::-moz-meter-bar { background: orange; }
+.signup form .input-container:last-of-type meter[value="4"]::-moz-meter-bar { background: green; }
+
+.signup form .input-container:last-of-type .password-strength-meter-container p {
+    margin: 10px 0 5px;
+}
+.signup form .input-container:last-of-type .password-strength-meter-container p strong { font-weight: bold; }
+.signup form .input-container:last-of-type .password-strength-meter-container .feedback {
+	color: #9ab;
+	font-size: 90%;
+	padding: 0 .25em;
+	font-family: Courgette, cursive;
+	margin-top: 0.5em;
+}
+.signup form .input-container input {
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    outline: none;
+}.signup form .input-container input:focus { border-bottom-color: rgb(145, 143, 143); }
+.signup form .input-container input#signup-password-id { border: none; }
+.signup form .input-container label {
+    align-self: flex-start;
+    font-size: 13px;
+    cursor: pointer;
+}
+.signup form .input-container span {
+    color: brown;
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+}
+.signup form .signup-btn {
+    background-color:darkcyan;
+    background-image: linear-gradient(to bottom,rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%,rgba(0,0,0,0.50) 50%);
+    color:white;
+    background-blend-mode: multiply,multiply;
+    padding: 7px;
+    width: 100%;
+    font-size: 12px;
+    font-family: arial;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    margin: 20px 0;
+    cursor: pointer;
+}.signup form .signup-btn:hover {
+    background-color: #017777;
+    background-image: linear-gradient(to bottom,rgba(255,255,255,0.50) 0%, rgba(0, 0, 0, 0.57) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%,rgba(0, 0, 0, 0.57) 50%);
+}
+.signup form .signup-btn:active {
+    padding: 8px 6px 6px 8px;
+}
+.signup .signin-container {
+    color: rgba(0, 0, 0, .74);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13px;
+    margin: 30px 0 10px;
+}
+.signup .signin-container .signin-btn {
+    color: black;
+    background-color: transparent;
+    font-size: 12px;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+/* media screen */
+@media screen and (max-width: 992px) {
+    .signup {
+        width: 500px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .signup {
+        width: 400px;
+    }
+    .signup .signin-container {
+        margin: 20px 0 10px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .signup {
+        width: 200px;
+    }
+    .signup h1 {
+        font-size: 22px;
+        margin: 0;
+    }
+    .signup form .name-field {
+        display: flex;
+        flex-direction: column;
+    }
+    .signup form .name-field .input-container, .signup form .name-field .input-container input {
+        width: 100%;
+    }
+    .signup .signin-container {
+        margin: 10px 0 5px;
+    }
+}

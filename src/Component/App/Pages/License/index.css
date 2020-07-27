@@ -1,0 +1,16 @@
+.license { margin: 40px 20px; }
+.license .license-freely { margin-bottom: 10px; }
+.license .license-permitted { margin-bottom: 40px; }
+.license .license-permitted div, .license .license-notPermitted-description div  { margin-top: 7px; }
+.license .license-permitted div::before { content: "✅"; }
+.license .license-permitted div span, .license .license-notPermitted-description div span { margin-left: 8px; }
+.license .license-notPermitted, .license .license-longform {
+    margin-bottom: 15px;
+}
+.license .license-longform-description { max-width: 600px; }
+.license .license-notPermitted-description div::before { content: "🚫"; }
+.license .license-question span {
+    color: #818182;
+    text-decoration: underline;
+    cursor: pointer;
+}.license .license-question span:hover { color: #535353; }

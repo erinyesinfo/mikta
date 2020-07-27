@@ -1,0 +1,101 @@
+.login {
+    width: 700px;
+}
+.login form {
+    display: flex;
+    flex-direction: column;
+}
+.login form .input-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    position: relative;
+}
+.login form .input-container label {
+    align-self: flex-start;
+    font-size: 13px;
+    cursor: pointer;
+}
+.login form .input-container .signin-svg {
+    position: absolute;
+    top: 27px;
+    width: 11px;
+    z-index: 2;
+}
+.login form .input-container input {
+    padding: 7px 7px 7px 16px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    outline: none;
+}.login form .input-container input:focus { border-bottom-color: rgb(145, 143, 143); }
+.login form .input-container span {
+    color: brown;
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+}
+.login form .login-btn {
+    color: white;
+    background: linear-gradient(125deg,#f7ff00,#db36a4,#00dbde);
+    padding: 7px;
+    width: 100%;
+    font-size: 12px;
+    font-family: arial;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    margin: 20px 0;
+    cursor: pointer;
+}.login form .login-btn:hover { background: linear-gradient(125deg,#e0e802,#cc2494,#02c3c6); }
+.login form .login-btn:active {
+    padding: 8px 6px 6px 8px;
+}
+.login .guest-container, .login .signup-container {
+    color: rgba(0, 0, 0, .74);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13px;
+    margin: 10px 0 0;
+}
+.login .guest-container .guest-btn {
+    color: white;
+    background-color: lightslategray;
+    padding: 3px 12px;
+    font-size: 12px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+}.login .guest-container .guest-btn:hover { background-color: rgb(104, 122, 141); }
+.login .signup-container {
+    margin: 60px 0 10px;
+}
+.login .signup-container .signup-btn {
+    color: black;
+    background-color: transparent;
+    font-size: 12px;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+/* media screen */
+@media screen and (max-width: 992px) {
+    .login { width: 500px; }
+}
+@media screen and (max-width: 768px) {
+    .login { width: 400px; }
+}
+@media screen and (max-width: 576px) {
+    .login { width: 200px; }
+    .login h1 {
+        font-size: 22px;
+        margin: 0;
+    }
+    .login .signup-container { margin: 40px 0 5px; }
+}

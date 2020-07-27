@@ -1,0 +1,9 @@
+.splitUi {
+    display: grid;
+    grid-template-columns: 69% auto;
+    align-items: flex-start;
+}
+
+@media screen and (max-width: 576px) {
+    .splitUi { grid-template-columns: 100%; }
+}

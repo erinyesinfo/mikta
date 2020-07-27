@@ -1,0 +1,120 @@
+.modal-showEditCollection h1 {
+    margin-top: 0;
+    text-align: left;
+}
+.modal-showEditCollection form {
+    width: 600px;
+    text-align: left;
+}
+.modal-showEditCollection form input,
+.modal-showEditCollection form textarea { width: 100%; }
+.modal-showEditCollection form { text-align: left }
+.btn-collection-container, .btn-collection-delete-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-right: 0;
+}
+.modal-showEditCollection form span.collection-error {
+    color: brown;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    text-align: right;
+    margin: -7px 0 20px;
+}
+.modal-showEditCollection form div span { margin-right: -220px; }
+.modal-showEditCollection form div .cancelCollection,
+.modal-showEditCollection form div .deleteCollection { 
+    padding: 8px 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-decoration: underline;
+}.modal-showEditCollection form div .cancelCollection,
+.modal-showEditCollection form div .deleteCollection:hover { padding: 8px 1px; }
+.modal-showEditCollection form div .deleteCollectionBtn, .modal-showEditCollection form div .delete-collection-btn {
+    border: 1px solid #eee; 
+    color: #fff;
+    fill: currentColor;
+    background-color: #e25c3d;
+    padding: 8px 12px;
+    cursor: pointer;
+}.modal-showEditCollection form div .deleteCollectionBtn, .modal-showEditCollection form div .delete-collection-btn:hover { background-color: #b7381b }
+.editCollection-maxNameNumber {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    position: relative;
+    bottom: 35px;
+    height: 0px;
+    color:#818182;
+    font-size: 12px;
+}
+.editCollection-maxDescriptionNumber {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    position: relative;
+    bottom: 35px;
+    height: 0px;
+    color:#818182;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 992px) {
+    .modal-showEditCollection form { width: 500px; }
+    .modal-showEditCollection h1 { font-size: 28px; }
+    .modal-showEditCollection form .btn-collection-container span,
+    .modal-showEditCollection form .btn-collection-delete-container span {
+        margin-right: -160px;
+    }
+    .likes-collectionForm label span { font-size: 14px; }
+}
+@media screen and (max-width: 768px) {
+    .modal-showEditCollection form { width: 450px; }
+    .modal-showEditCollection h1 { font-size: 25px; }
+    .modal-showEditCollection form .btn-collection-container span,
+    .modal-showEditCollection form .btn-collection-delete-container span {
+        margin-right: -120px;
+    }
+    .likes-collectionForm label { font-size: 14px; }
+    .likes-collectionForm label span { font-size: 13px; }
+}
+@media screen and (max-width: 576px) {
+    .modal-showEditCollection form { width: 250px; }
+    .modal-showEditCollection h1 { font-size: 22px; }
+    .likes-collectionForm label { font-size: 13px; }
+    .likes-collectionForm label span { font-size: 12px; }
+    .collectionInp { margin: 5px 0 12px 0; }
+    .collectiontextArea { margin: 5px 0 12px 0; }
+    .editCollection-maxNameNumber, .editCollection-maxDescriptionNumber {
+        font-size: 11px;bottom: 36px;
+    }
+    .modal-showEditCollection form div span { margin-right: -40px; }
+    .btn-collection-delete-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 13px;
+    }
+    .modal-showEditCollection form div .cancelCollection {
+        margin-left: 15px;
+        margin-top: 5px;
+    }
+    .createCollection { padding: 6px 9px; }
+    .modal-showEditCollection form div .delete-collection-btn {
+        font-size: 11px;
+        padding: 6px 9px;
+    }
+    .modal-showEditCollection form div .deleteCollectionBtn {
+        font-size: 11px;
+        padding: 6px 9px;
+        margin-left: auto;
+        position: relative;
+        bottom: 58px;
+        margin-bottom: -50px;
+    }
+}

@@ -1,0 +1,42 @@
+.upload-btn {
+    color: #fff;
+    background-color: lightslategray;
+    display: flex;
+    align-items: center;
+    padding: 6px 15px 6px 0;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin: 0 0 15px;
+    cursor: pointer;
+}.upload-btn:hover { background-color: rgb(100, 118, 136); }
+.upload-btn svg {
+    height: 25px;
+    margin: 0 10px 0 5px;
+}
+.upload-container {
+    display: flex;
+    margin-bottom: 15px;
+}
+.bg-img-removeImage {
+    position: relative;
+    background: url("http://unsplash.it/1200x800") center center no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+.bg-img-removeImage:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #000, #000);
+    opacity: .6;
+}
+.bg-img-removeImage span {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    color:beige;
+    font-size: 18px;
+}

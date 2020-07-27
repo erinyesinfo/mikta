@@ -1,0 +1,235 @@
+.usernameWrapper {
+    background: white;
+    margin-top: 40px
+}
+.informationWrapper {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+.userInfo {
+    display: flex;
+    flex-direction: column;
+}
+.userInfo_1 {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.userInfo_name {
+    margin-bottom: 10px;
+    margin-right: 15px;
+    font-size: 25px;
+    font-weight: 700
+}
+hr { opacity: 0.1; }
+.userInfo-btns { display: flex;align-items: center;}
+.allUserInfo { display: flex;justify-content: center; }
+.allUserInfo-image {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    margin-right: 40px;
+}
+.navWrapper {
+    display: flex;
+    flex-direction: row;
+    min-width: 400px; 
+}.hr-nav { margin-bottom: 40px; }
+.images { padding: 5px 20px; }
+.user { color: #818182;cursor: pointer; }
+.user:nth-child(odd) {
+    margin-right: 30px;
+}
+.user:hover { color: black }
+.user a {
+    text-decoration: none;
+    color: #818182
+} .user a:hover { color: black }
+.followBtn {
+    margin-right: 10px;
+    border-radius: 6px;
+    background: #d4afaf;
+    color: white;
+    border: 1px;
+    font-size: 15px;
+    width: 120px;
+    margin-top: 2px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 7px;
+}.followBtn:hover { background-color: #c9a1a1 }
+.followBtn:active { padding-left: 10px; }
+.followingBtn { background-color: #000 }
+.followingBtn:hover { background-color: #393838 }
+.messageBtn {
+    margin-right: 10px;
+    border-radius: 6px;
+    background: #0085ad;
+    color: white;
+    border: 1px;
+    font-size: 15px;
+    width: 90px;
+    margin-top: 2px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 7px;
+}.messageBtn:hover { background-color: #017294; }
+.messageBtn:active { padding-left: 10px; }
+
+.user-location-portfolio_url {
+    display: flex;
+    padding: 0 10px;
+}
+.user-bio {
+    display: flex;
+    padding: 10px;
+}.user-bio div { margin-right: 60px; }
+
+
+/* sub pages */
+.photos, .likes, .collections {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror /
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */
+    /* not supported by any browser */
+}
+.photos {
+    margin-bottom: -10px;
+    margin-left: 20px;
+    padding-bottom: 20px
+}
+.likes {
+    margin-bottom: -10px;
+    margin-left: 30px;
+    padding-bottom: 20px;
+}
+.collections {
+    margin-bottom: -10px;
+    margin-left: 30px;
+    padding-bottom: 20px;
+}
+.navLink {
+    text-decoration: none;
+    color: #818182;
+    cursor: pointer;
+}.navLink:hover { color: black; }
+.photosCategory {
+    display: flex;
+    flex-direction: row;
+}
+.one {
+    display: flex;
+    flex-direction: column;
+}
+.two {
+    display: flex;
+    flex-direction: column;
+}
+.three {
+    display: flex;
+    flex-direction: column;
+}
+.full { width: 100%; }
+.divLoadMore { text-align: center; }
+.loadMorePhotos {
+    background: none;
+    border: 1px solid #eee;
+    color: #818182;
+    padding: 12px;
+    margin: 15px 0 15px 0px;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 200px;
+    font-weight: 500;
+}
+.loadMorePhotos:hover {
+    border: 1px solid black;
+    color: black;
+    font-weight: 500;
+}
+.likesContent {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 250px;
+    justify-content: center;
+}
+.mediaWidth {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: flex-start;
+    grid-gap: 0.1px 10px;
+    grid-auto-rows: 10px;
+}
+.mediaWidth .likes-userProfile-container { padding: 0; }
+
+@media screen and (max-width: 992px) {
+    .photosCategory {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .mediaWidth {
+        display: grid;
+        grid-template-columns: 49% auto;
+        align-items: flex-start;
+        grid-gap: 0.1px 10px;
+        grid-auto-rows: 10px;
+    }
+    .mediaWidth .likes-userProfile-container {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .photosCategory {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .one {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }
+    .two {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }
+    .three {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }
+    .userInfo_1 { display: block; }
+    .userInfo_name { margin-bottom: 5px;font-size: 20px; }
+    .user-location-portfolio_url { font-size: 13px; }
+    .user:nth-child(odd), .user-bio div { margin-right: 20px; }
+}
+
+@media screen and (max-width: 576px) {
+    .mediaWidth {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+        grid-gap: 0.1px 10px;
+        grid-auto-rows: 10px;
+    }
+    .navWrapper { font-size: 12px;min-width: 300px; }
+    .photos, .likes , .collections { margin-left: 20px; }
+    .informationWrapper { padding: 10px;justify-content: flex-start; }
+    .followBtn { font-size: 12px;margin-right: 5px; }
+    .messageBtn { font-size: 12px;width: 75px; }
+    .allUserInfo { flex-direction: column;text-align: left; }
+    .user-location-portfolio_url, .user-bio div { font-size: 14px; }
+}
+@media screen and (max-width: 430px) {
+    .navWrapper { min-width: 300px; }
+    .user-location-portfolio_url { flex-direction: column; }
+    .user:nth-child(odd), .user-bio div { margin-right: 0; }
+}

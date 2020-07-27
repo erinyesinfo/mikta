@@ -1,0 +1,61 @@
+.comments {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+.longComments {
+    align-items: flex-start;
+}
+.p {
+    width: 50%;
+    text-align: left;
+}
+span p {
+    word-wrap: anywhere;
+    margin-top: 7px;
+}
+.comments p {
+    border-radius: 6px;
+    border: 1px solid#fff;
+    background: white;
+    padding: 1px 4px 1px 4px;
+    display: table;
+}
+.comment-img {
+    width: 45px;
+    border-radius: 50%;
+    height: 35px;
+    margin-right: 5px
+}
+.nav_profileName {
+    text-decoration: none;
+    color: cornflowerblue;
+    font-weight: 600;
+    margin-right: 5px;
+}.nav_profileName:hover { color:#487bd7;padding-left: 0.5px; }
+.outilsBtn {
+    margin-left: auto;
+}
+.editInp {
+    padding: 7px;
+    border: 1px solid #eee;
+    border-radius: 2px;
+}
+.editlargeInp {
+    padding: 7px;
+    margin: 10px 0 10px 0;
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: 2px;
+}
+.outilsLikeAndReply {
+    margin-left: 55px;
+    margin-top: -13px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.outilsLikeAndReply span {
+    margin-right: 10px;
+    cursor: pointer;
+}

@@ -1,0 +1,43 @@
+.container-account { display: flex; }
+.accountSettings { padding: 0 60px 0 20px; }
+.accountSettings .account-navs {
+    display: flex;
+    flex-direction: column;
+    width: 130px;
+}.accountSettings .account-navs a, .accountSettings .account-navs span {
+    color: rgba(0, 0, 0, .64);
+    text-decoration: underline;
+    margin-bottom: 7px;
+    cursor: pointer;
+}.accountSettings .account-navs a:hover, .accountSettings .account-navs span:hover {
+    color: rgba(0, 0, 0, .94);
+}
+.accountSettings .account-navs a.nav-active, .accountSettings .account-navs span.nav-active {
+    text-decoration: none;
+    color: #000;
+    cursor: default;
+}
+.accountSettings .account-navs .account-nav {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror /
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */
+    /* not supported by any browser */
+}
+
+/* Media query */
+@media screen and (max-width: 768px) {
+    .container-account { flex-direction: column; }
+    .accountSettings {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 20px;
+    }
+    .account-hr { width: 100%; }
+}
+@media screen and (max-width: 576px) {
+    .accountSettings { padding: 0 10px; }
+}

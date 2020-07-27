@@ -1,0 +1,89 @@
+.app-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 120px;
+}.app-spinner .mikta-animate-svg {
+  width: 250px;
+  stroke:#000;
+  stroke-width: 2px;
+  stroke-miterlimit:10;
+  -moz-animation: fading 5.5s linear infinite;
+  -webkit-animation: fading 5.5s linear infinite;
+  -o-animation: fading 5.5s linear infinite;
+  animation: fading 5.5s linear infinite;
+}.app-spinner .mikta-animate-svg .ead16890-27f5-42ff-b009-f316395c1271 {
+  /* we divide the line in multiple dashes (some full and other empty) */
+  /* these dashes have 1000px in length */
+  /* so there are one dash full of 1000px of length and then one dash empty of 1000px of length and so on and so forth */
+  stroke-dasharray: 1000;
+
+  /* we change the position of the dashes */
+  stroke-dashoffset: 3000;
+
+  /* now we animate the dashoffset */
+  /* we reduce the offset of each dash so we have the impression that the dashes are moving */
+  -moz-animation: dash 5.5s linear infinite;
+  -webkit-animation: dash 5.5s linear infinite;
+  -o-animation: dash 5.5s linear infinite;
+  animation: dash 5.5s linear infinite;
+}
+.ead16890-27f5-42ff-b009-f316395c1271, .f94ff71b-ec7c-4afc-91a8-ed6e4512ddf9{
+  fill:none;
+}.efe0c1ae-ab6e-4572-a8d9-141e70e82d66 {
+  clip-path:url(#ebec8b66-494f-4e8e-9f43-9cd62a51d9b3);
+}.b292c59a-6a00-4aea-9f50-25a009f4d38f {
+  clip-path:url(#b6ce913b-3792-4d85-9899-3c50840b3872);
+}
+
+@media screen and (max-width: 992px) {
+  .app-spinner .mikta-animate-svg { width: 220px; }
+}
+@media screen and (max-width: 768px) {
+  .app-spinner .mikta-animate-svg { width: 180px; }
+}
+@media screen and (max-width: 576px) {
+  .app-spinner .mikta-animate-svg { width: 150px; }
+}
+
+
+
+/* keyframes */
+@-webkit-keyframes fading /* Safari and Chrome */ {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fading {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-webkit-keyframes dash /* Safari and Chrome */ {
+  0% {
+    stroke-dashoffset: 0;
+  } 15% {
+    fill: yellow;
+  } 35% {
+    fill: green;
+  } 65% {
+    fill: red;
+  } 85% {
+    fill: cornflowerblue;
+  } 100% {
+    fill: none;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 0;
+  } 15% {
+    fill: yellow;
+  } 35% {
+    fill: green;
+  } 65% {
+    fill: red;
+  } 85% {
+    fill: cornflowerblue;
+  } 100% {
+    fill: none;
+  }
+}

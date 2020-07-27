@@ -1,0 +1,38 @@
+.error404NotFound {
+    color: #000;
+    background-color: #ececec;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 10px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.error404NotFound .error404-svg {
+    width: 250px;
+    -moz-animation: fading 5.5s linear infinite;
+    -webkit-animation: fading 5.5s linear infinite;
+    -o-animation: fading 5.5s linear infinite;
+    animation: fading 5.5s linear infinite;
+}.error404NotFound h2 { font-weight: normal; }
+@media screen and (max-width: 992px) {
+    .error404NotFound .error404-svg { width: 220px; }
+}
+@media screen and (max-width: 768px) {
+    .error404NotFound .error404-svg { width: 180px; }
+}
+@media screen and (max-width: 576px) {
+    .error404NotFound .error404-svg { width: 150px; }
+}
+
+
+/* keyframes */
+@-webkit-keyframes fading /* Safari and Chrome */ {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fading {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
