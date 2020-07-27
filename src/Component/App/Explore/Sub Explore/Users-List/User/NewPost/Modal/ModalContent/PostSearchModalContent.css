@@ -1,0 +1,104 @@
+/* PostSearch */
+
+.post-searchPhotos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    max-height: 500px;
+    overflow: auto;
+}
+.post-searchPhotos-h1 { margin-top: 10px; }
+.post-formSearchPhotosStyle { width: 100%; }
+.generateXPhotos {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}.generateXPhotos label { margin-bottom: 5px; }
+/* inputs */
+.searchPhotos { width: 60%;padding: 7px;border: 1px solid#eee; }
+.XPhotos { width: 30%;padding: 7px;border: 1px solid#eee; }
+.searchPhotos:hover, .XPhotos:hover { border: 1px solid #cac6c6 }
+.searchPhotos:focus, .XPhotos:focus { border: 1px solid burlywood; }
+/* end inputs */
+
+/* searched photos */
+.searchedPhotos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 20px;
+}
+.searchPhoto-divImage {
+    height: 200px;
+    margin: 5px;
+}.searchPhoto-divImage img { height: 100%;width: 100%; }
+.searchPhoto-divImage img:hover { cursor: pointer;border: 1px solid#eee; }
+.post-div_btns { width: 100%; }
+.post-btnLeft, .post-btnRigth {
+    color:white;
+    background:darkslategray;
+    border: 1px solid#eee;
+    padding: 7px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 100%;
+}.post-btnLeft:hover, .post-btnRigth:hover { background-color: #213939; }
+.bg-img-selectImage {
+    position: relative;
+    background: url("http://unsplash.it/1200x800") center center no-repeat;
+    background-size: cover;
+    cursor: pointer;
+  }
+.bg-img-selectImage:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #000, #000);
+    opacity: .6;
+}
+.bg-img-selectImage span {
+    position: absolute;
+    top: 45%;
+    left: 35%;
+    color:white;
+}
+.post-searchPhoto-loading { padding: 10px; }
+/* end searched phtos */
+
+/* Media query */
+@media screen and (max-width: 1360px) {
+    .post-searchPhotos { width: 700px; }
+}
+@media screen and (max-width: 1200px) {
+    .post-searchPhotos { width: 600px; }
+}
+@media screen and (max-width: 992px) {
+    .post-searchPhotos { width: 500px; }
+    .searchedPhotos { grid-template-columns: 1fr 1fr; }
+}
+@media screen and (max-width: 768px) {
+    .post-searchPhotos { width: 400px; }
+    .post-searchPhotos-h1 { font-size: 28px; }
+    .bg-img-selectImage span { left: 30%; }
+}
+@media screen and (max-width: 576px) {
+    .post-selectPhotoWrapper { width: 100%; }
+    .post-searchPhotos { width: 300px; }
+    .searchPhotos { width: 90%; }
+    .XPhotos { width: 45%; }
+    .searchedPhotos { grid-template-columns: 1fr; }
+    .post-searchPhotos-h1 { font-size: 25px; }
+    .post-checkboxDiv .randomIMG, .post-checkboxDiv label {
+        font-size: 13.5px;
+    }
+    .generateXPhotos label { font-size: 14px; }
+    .post-btnLeft, .post-btnRigth { padding: 7px;font-size: 15px; }
+    .bg-img-selectImage span { left: 35%; }
+
+    .post-photoVideo-btn, .post-live-btn, .post-seperate { display: none; }
+}
+
+/* end of PostSearch */

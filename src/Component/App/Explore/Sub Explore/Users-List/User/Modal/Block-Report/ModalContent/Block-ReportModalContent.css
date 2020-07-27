@@ -1,0 +1,54 @@
+/* Block-ReportModalContent */
+
+.modal-showBlockReport form {
+    text-align: left;
+    margin: 15px 0 10px 0;
+    min-width: 400px;    
+    max-width: 500px;
+}
+.report-user-container { padding: 0 30px 10px 30px; }
+.report-user-done { padding: 20px; }
+.report-user-issue {
+    margin: 0 0 10px 0;
+    color: gray;
+    font-size: 13.5px;
+    font-weight: 400;
+}
+.report-user-allInputsContainer div { font-size: 14px; }
+.report-user-inputsContainer {
+    margin: 7px 0;
+}.report-user-container label { cursor: pointer; }
+.report-user-description {
+    max-width: 300px;
+    color: grey;
+    margin: 15px 0;
+    font-size: 0.7rem;
+    font-weight: 400;
+}
+.report-user-container textarea { border: 1px solid #eee; }
+.report-user-container textarea:hover { border: 1px solid darkgray; }
+.report-user-container textarea:focus { border: 1px solid bisque; }
+.report-user-hr {
+    color: floralwhite;
+    margin-bottom: 15px;
+    opacity: 0.2;
+}
+.report-user-btns { text-align: right;margin: 0 25px 20px 30px; }
+.report-user-btn-cancel {
+    border: none;
+    background-color: transparent;
+    color: grey;
+    font-size: 15px;
+    margin: 0 0 0 10px;
+}.report-user-btn-cancel:hover { cursor: pointer; }
+.report-user-btn-submit {
+    border: none;
+    background-color: transparent;
+    color: #000000b3;
+    font-size: 15px;
+}.report-user-btn-submit:hover { cursor: pointer; }
+
+@media screen and (max-width: 576px) {
+    .modal-showBlockReport form { min-width: 300px;width: 300px; }
+    .report-user-done { width: 300px; }
+}

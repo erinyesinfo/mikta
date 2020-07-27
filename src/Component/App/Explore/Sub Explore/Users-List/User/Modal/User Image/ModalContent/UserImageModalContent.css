@@ -1,0 +1,147 @@
+/* User Image */
+
+.image-container { flex: 1; }
+.image-userProfile {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    width: 100%;
+}
+.image-infowrapper {
+    width: 300px;
+    margin: 15px 20px 0 0;
+}
+.image-divtagImages {
+    height: 550px;
+    width: 600px;
+    margin-right: 20px;
+}
+.image-tagImages {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+.image-username { margin-right: auto; }
+.image-user {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: flex-start;
+}
+.image-description {
+    display: flex;
+    padding-bottom: 15px;
+    text-align: left;
+}
+.image-description span {
+    margin-right: auto
+}
+.image-showMoreDescription {
+    margin-top: 5px;
+    color: white;
+    background: dimgray;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    padding: 3px;
+    cursor: pointer;
+}.image-showMoreDescription:hover {
+    border: 1px solid #dddbdb;
+    background-color:#534d4d;
+    padding-right: 1px;
+}
+.image-user .image-profileImg {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    margin-right: 7px;
+    cursor: auto;
+}
+.image-user .image-profileMyImg {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    margin-right: 7px;
+    cursor: auto;
+}
+.image-outil {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.image-outil .image-like, .image-outil .image-comment{
+    margin-right: 30px;
+    cursor: pointer;
+}.image-outil .image-share { cursor: pointer; }
+.image-like .image-sLike {
+    color: dodgerblue;
+}
+.image-commentsAll {
+    background-color: #dbd8d8;
+    padding: 20px 10px 5px 10px;
+    border-radius: 2px;
+}
+.image-formComments {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.image-formComments img {
+    width: 45px;
+    border-radius: 50%;
+    height: 35px;
+    margin-right: 5px
+}
+.image-commentInp {
+    flex: 1;
+    width: 100%;
+    border-radius: 7px 1px 9px 10px;
+    border: 1.5px solid #eee;
+    padding-left: 7px;
+    background-color: #eee;
+}
+.image-commentInp:focus {
+    background-color: white
+}
+.image-commentInp:hover {
+    border: 1.5px solid #dbdbdb;
+}
+.image-modalcomment {
+    max-height: 337px;
+    overflow-y: auto;
+}
+
+/* Media Query */
+
+@media screen and (max-width: 992px) {
+    .image-divtagImages { width: 350px; }
+}
+@media screen and (max-width: 768px) {
+    .image-divtagImages { width: 200px; }
+    .image-infowrapper { margin: 15px 15px 0 0; }
+}
+@media screen and (max-width: 576px) {
+    .image-userProfile {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+    }
+    .image-divtagImages {
+        width: 100%;
+        margin-right: 0;
+        height: 100%;
+    }
+    .image-infowrapper {
+        margin: 15px 0 0 0;
+        max-height: 375px;
+        overflow-y: auto;
+    }
+    .image-userinfo { font-size: 14px;margin: 0 10px; }
+    .image-user { align-items: center; }
+    .image-outilWrapper {
+        margin: 0 10px;
+        max-height: 100%;
+    }
+    .image-modalcomment { max-height: 100%;overflow-y: hidden; }
+    .image-outil { font-size: 14px;margin-top: 5px; }
+    .image-tagImages { width: 300px;height: 200px; }
+}

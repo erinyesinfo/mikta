@@ -1,0 +1,124 @@
+.post-formStyle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 20px;
+    border: 1px solid #eee;
+    border-radius: 2px;
+}
+.post-postText {
+    height: 30px;
+    background:#eee;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.post-makePost-btn.post-photoVideo-btn, .post-live-btn {
+    color: #534e4e;
+}
+.post-makePost-btn, .post-photoVideo-btn, .post-live-btn {
+    background: transparent;
+    border: 0;
+}.post-makePost-btn:hover, .post-photoVideo-btn:hover, .post-live-btn:hover {
+    color: black;
+    cursor: pointer;
+}.post-makePost-btn i, .post-photoVideo-btn i, .post-live-btn i {
+    font-size: 11px;
+    margin-right: -2px;
+}
+.post-active-btn {
+    color: black;
+}.post-active-btn:hover { cursor: default; }
+.post-disable-btn {
+    color: #534e4e;
+    cursor: default;
+}
+.post-innerFormStyle {
+    padding: 0 10px 20px 7px;
+    width: 100%;
+}
+.post-form-divStyle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    position: relative;
+}.post-form-divStyle::before {
+    content: '';
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid white;
+    position: absolute;
+    top: -7px;
+    left: 43px;
+}
+.post-imageStyle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #eee;
+    position: absolute;
+    margin-left: 7px
+}
+.newPost {
+    width: 100%;
+    resize: none;
+    padding: 16px 7px 0px 55px;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #eee;
+}.newPost:focus { background: #fff; }
+/* show selectphoto btn */
+.post-selectPhotoWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+/* end of show selectphoto btn */
+.post-checkboxDiv {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 5px;
+    width: 100%
+}.post-checkboxDiv .randomIMG, .post-checkboxDiv label{ cursor: pointer; }
+.post-selectPhoto { font-size: 14px; }
+
+/* Rotate */
+@keyframes RotateIcon {
+    /*0% {
+        transform: rotatez(0deg)
+    }*/
+    0% {
+        transform: rotatez(45deg)
+    }
+    100% {
+        transform: rotatez(0deg)
+    }
+}
+.span-setting {
+    margin-left: auto;
+    margin-right: 5px;
+    font-size: 17px;
+    margin-top: 2px;
+    cursor: pointer;
+}.span-setting:hover {
+    animation: RotateIcon 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+.post-submit {
+    width: 100%;
+    height: 35px;
+    background-color: transparent;
+    border: 1px solid #eee;
+    border-radius: 1px;
+    opacity: 0.8;
+}.post-submit:hover { cursor: pointer;border: 1px solid rgb(228, 224, 224);opacity: 1; }
+.post-submit:active { padding-top: 2px;padding-left: 10px; }
+.PostCardStyle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 20px 0 20px;
+}
+

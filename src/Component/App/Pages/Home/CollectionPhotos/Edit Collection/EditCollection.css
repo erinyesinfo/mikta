@@ -1,0 +1,67 @@
+.editCollection-maxNameNumber {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    position: relative;
+    bottom: 35px;
+    height: 0px;
+    color:#818182;
+    font-size: 12px;
+}
+.editCollection-maxDescriptionNumber {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    position: relative;
+    bottom: 35px;
+    height: 0px;
+    color:#818182;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 992px) {
+    .modal-showEditCollection form { width: 500px; }
+    .modal-showEditCollection h1 { font-size: 28px; }
+    .modal-showEditCollection form .btnCollection span { margin-right: -160px; }
+    .likes-collectionForm label span { font-size: 14px; }
+}
+@media screen and (max-width: 768px) {
+    .modal-showEditCollection form { width: 450px; }
+    .modal-showEditCollection h1 { font-size: 25px; }
+    .modal-showEditCollection form .btnCollection span { margin-right: -120px; }
+    .likes-collectionForm label { font-size: 14px; }
+    .likes-collectionForm label span { font-size: 13px; }
+}
+@media screen and (max-width: 576px) {
+    .modal-showEditCollection form { width: 250px; }
+    .modal-showEditCollection h1 { font-size: 22px; }
+    .likes-collectionForm label { font-size: 13px; }
+    .likes-collectionForm label span { font-size: 12px; }
+    .collectionInp { margin: 5px 0 12px 0; }
+    .collectiontextArea { margin: 5px 0 12px 0; }
+    .editCollection-maxNameNumber, .editCollection-maxDescriptionNumber {
+        font-size: 11px;bottom: 36px;
+    }
+    .modal-showEditCollection form div span { margin-right: -40px; }
+    .isbtnCollectionDelete {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 13px;
+    }
+    .modal-showEditCollection form div .cancelCollection {
+        margin-left: 15px;
+        margin-top: 5px;
+    }
+    .modal-showEditCollection form div .deleteCollectionBtn {
+        font-size: 11px;
+        padding: 6px 9px;
+        margin-left: auto;
+        position: relative;
+        bottom: 58px;
+        margin-bottom: -50px;
+    }
+    .modal-showEditCollection form .isbtnCollectionDelete, .modal-showEditCollection form .isbtnCollectionDelete {
+        align-items: flex-start;
+    }
+}

@@ -1,0 +1,57 @@
+/* PostCard-Setting */
+
+.postCard-setting { position: relative; }
+.postCard-setting .threeDots:hover { cursor: pointer; }
+.postCard-setting .showSetting-btns {
+    animation: toggleIn 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    right: 0;
+    top: 25px;
+    background: black;
+    padding: 1px 0 0 0;
+}.postCard-setting .showSetting-btns::before {
+    content: "";
+    position: absolute;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #000;
+    height: 0;
+    right: 0;
+    top: -6px;
+}
+.postCard-setting .showSetting-btns button {
+    background: transparent;
+    color: white;
+    border: none;
+    text-align: right;
+    font-size: 14px;
+    padding: 8px;
+}.postCard-setting .showSetting-btns button:hover {
+    background: #737272;cursor: pointer;
+}.postCard-setting .showSetting-btns button:active { padding: 9px; }
+
+/* keyframes */
+@keyframes toggleIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    30% {
+        opacity: 0.3;
+        transform: scale(1.2);
+        transform: translateY(-3px);
+        right: 3px;
+    }
+    50% { opacity: 0.5;transform: translateY(0px); }
+    90% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,189 @@
+/* shared */
+.splitUi-shared {
+    display: grid;
+    grid-template-columns: 79% auto;
+    align-items: flex-start;
+}
+
+.shared-userProfile-container {
+    padding-bottom: 20px;
+ }
+.shared-userProfile {
+    padding: 15px;
+    margin-bottom: 5px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+ }
+ .shared-userProfile .shared-tagImages {
+    width: 100%;
+    border-radius: 4px;
+ }
+.shared-user {
+    display: flex;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+.shared-user-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}.shared-user-info-profile { display: flex; }
+.shared-time { font-size: 12px; }
+.hidden { display: none; }
+.shared-description {
+    display: flex;
+    padding-bottom: 10px;
+    max-width: 400px;
+}
+.shared-mdDescription {
+    display: flex;
+    padding-bottom: 10px;
+    max-width: 580px;
+}
+.shared-lgDescription {
+    display: flex;
+    padding-bottom: 10px;
+}
+/*.shared-setting {
+    margin-left: auto;
+}*/
+.shared-description span {
+    margin-right: auto
+}
+.shared-user .shared-profileImg {
+    border-radius: 50%;
+    height: 35px;
+    width: 40px;
+    margin-right: 8px;
+    cursor: auto;
+}
+/* .shared-myProfile { font-weight: 600;color: #1e90ffc2;margin-right: 3px; } */
+.shared-myProfile { font-weight: 600;color: #1e90ffc2;margin-right: auto; }
+.shared-helper { font-weight: 500;display: inline-flex; }
+.shared-username {
+    margin-right: 5px;
+    cursor: pointer;
+}.shared-username:hover {
+    text-decoration: underline;
+    animation: shackIn 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+.shared-usernameLink {
+    color: #1e90ffc2;
+    text-decoration: none;
+}
+
+@keyframes shackIn {
+    100% {
+        padding-left: 0.3px
+      }
+}
+.shared-outil {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.shared-outil .shared-like, .shared-outil .shared-comment{
+    margin-right: 30px;
+    cursor: not-allowed;
+}
+.shared-like .shared-sLike {
+    color: dodgerblue;
+}
+.shared-commentInp {
+    /* flex: 1; */
+    width: 90%;
+    border: 1.5px solid #eee;
+    border-radius: 6px 3px 6px 7px;
+    padding: 5px 5px 5px 7px;
+    background-color: #eee;
+}.shared-commentInp:focus { background-color: white }
+.shared-commentInp:hover { border: 1.5px solid #dbdbdb; }
+.edited {
+    color:cornflowerblue;
+    font-weight: 500;
+    opacity: 0.7;
+}
+.shared-setting {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.showSetting {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #000;
+    margin-top: 25px;
+    margin-right: -18px;
+    border-radius: 1px;
+    cursor: pointer;
+}.showSetting::before {
+    content: "";
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #000;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 60px;
+    top: -6px;
+}
+.toggleBtn {
+    cursor: pointer;
+}
+.showSetting .delete {
+    text-align: left;
+    padding: 8px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: white;
+    /* color: #6f6f6f; */
+}.showSetting .delete:hover { background-color: #555353; }
+.showSetting .editDescrition {
+    text-align: left;
+    padding: 8px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: white;
+    /* color: #6f6f6f; */
+    /* padding: 0 30px 0 30px; */
+}.showSetting .editDescrition:hover { background-color: #555353; }
+.descriptionInp {
+    width: 90%;
+    border-radius: 7px 1px 9px 10px;
+    border: 1.5px solid #eee;
+    padding: 8px;
+    background-color: #eee;
+    margin-left: 10px;
+}.descriptionInp:focus { background-color: white }
+.descriptionInp:hover { border: 1.5px solid #dbdbdb; }
+.formDescription {
+    margin-bottom: 20px
+}.formDescription .dvBtn {
+    margin-top: 15px;
+}
+.formDescription .dvDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-left: 14px;
+}
+.dvDescription h4 {
+    margin-bottom: -5px;
+}
+.dvDescription p {
+    color: darkgray;
+}
+.descriptionLabel {
+    display: flex;
+    margin: 0 0 7px 14px;
+}
+/*
+    color: #6f6f6f;
+    background:#EEE;
+    background-hove: #f6f6f6
+*/
+@media screen and (max-width: 576px) {
+    .splitUi-shared { grid-template-columns: 100%; }
+}

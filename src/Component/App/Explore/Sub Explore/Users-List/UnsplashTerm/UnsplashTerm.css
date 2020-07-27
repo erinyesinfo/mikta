@@ -1,0 +1,20 @@
+.term-divWrapper {
+    margin: 20px;
+    position: relative;
+}
+.term-innerDiv {
+    background: moccasin;
+    width: 100%;
+    padding: 25px 20px 20px 20px;
+    border-radius: 2px;
+}
+.term-innerDiv strong { font-weight: bold; }
+.term-divWrapper button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: darkgoldenrod;
+    border: 0;
+    color: white;
+    font-size: 14px;
+}.term-divWrapper button:hover { cursor: pointer;background-color: rgb(168, 122, 4); }

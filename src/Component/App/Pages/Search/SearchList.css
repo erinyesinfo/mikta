@@ -1,0 +1,12 @@
+.searched { margin: 20px; }
+.searched-loading { margin: 40px 20px; }
+.searched-title { margin: 35px 0 45px 0;font-size: 36px; }
+.searched-divBtn { display: flex;justify-content: center; }
+.searched-btn-morePhotos {
+    margin: 40px 0 0 0;
+    width: 160px;
+    height: 35px;
+    background: transparent;
+    border: 1px solid #eee;
+}.searched-btn-morePhotos:hover { border: 1px solid #dfdcdc;cursor: pointer; }
+.searched-btn-morePhotos:active { padding: 1px 0 0 2px; }

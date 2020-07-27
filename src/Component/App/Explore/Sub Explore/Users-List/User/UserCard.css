@@ -1,0 +1,128 @@
+/* photos.css */
+.username {
+    margin-right: auto;
+    cursor: pointer;
+}
+.username:hover {
+    text-decoration: underline;
+    animation: shackIn 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+.usernameLink {
+    color: black;
+    text-decoration: none;
+}
+@keyframes shackIn {
+    100% {
+        padding-left: 0.3px
+      }
+}
+/* end */
+
+.userProfile {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 40px
+}.PostCardStyle .postCard-wrapper { width: 100%; }
+.outil-username {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}.outil-username .username-helper { display: flex; }
+.outil-username .time {
+    word-spacing: -1px;
+    font-size: 11px;
+}
+.userProfile .tagImages {
+    width: 100%;
+    cursor: pointer;
+}
+.userCard, .description {
+    display: flex;
+    padding-bottom: 15px;
+    word-wrap: anywhere;
+    align-items: flex-start;
+}
+.description span { margin-right: auto; }
+.showMoreDescription {
+    margin-top: 5px;
+    color: white;
+    background: dimgray;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    padding: 3px;
+    cursor: pointer;
+}.showMoreDescription:hover {
+    border: 1px solid #dddbdb;
+    background-color:#534d4d;
+    padding-right: 1px;
+}
+.userCard .profileImg {
+    border-radius: 50%;
+    height: 45px;
+    width: 50px;
+    margin-right: 7px;
+    cursor: auto
+}
+.userCard .profileMyImg {
+    border-radius: 50%;
+    height: 42px;
+    width: 50px;
+    margin-right: 7px;
+    cursor: auto
+}
+.outil {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.outil .like, .outil .comment{
+    margin-right: 30px;
+    cursor: pointer;
+}.outil .share { cursor: pointer; }
+.like .sLike { color: dodgerblue; }
+.commentsAll {
+    background-color: #dbd8d8;
+    padding: 20px 10px 5px 10px;
+    border-radius: 2px;
+}
+.formComments {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.formComments img {
+    width: 45px;
+    border-radius: 50%;
+    height: 35px;
+    margin-right: 5px
+}
+.commentInp {
+    flex: 1;
+    width: 100%;
+    border-radius: 7px 1px 9px 10px;
+    border: 1.5px solid #eee;
+    padding-left: 7px;
+    background-color: #eee;
+}.commentInp:focus { background-color: white }
+.commentInp:hover { border: 1.5px solid #dbdbdb; }
+
+/* Media Query */
+
+@media screen and (max-width: 768px) {
+    .comments img { display: none }
+    .outilsLikeAndReply {
+        margin-left: 0;
+        margin-top: -10px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .comments img { display: none }
+    .outilsLikeAndReply {
+        margin-left: 0;
+        margin-top: -10px;
+    }
+}
