@@ -31,7 +31,7 @@ class Close extends Component {
             }
         }
         const data = { password };
-        const api = await Server.post("/data-account-close", data);
+        const api = await Server.post("/close-account", data);
         if (api.data !== "success") {
             this.setState({ password_error: "Current password is invalid" }, this.handleCloseSpinner);
         } else {

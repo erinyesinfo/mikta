@@ -69,7 +69,7 @@ class Header extends Component {
   onSubmit = formValues => {
     if (!formValues.title) return null;
     this.props.fetchUnsplashSearchedPhotos(true);
-    this.props.handleSearchBool(true);
+    this.props.handleIsSearchUnsplashPhotos(true);
     this.props.fetchUnsplashSearchedPhotos(formValues.title, 1);
     return this.props.history.push(`/s/photos/${formValues.title}`);
   };

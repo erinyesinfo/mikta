@@ -27,7 +27,7 @@ class ModalContent extends Component {
                 };                
                 this.props.handleUpdateDBUserData(data);
                 this.props.handleCloseEditPhoto();
-                return await Server.post("/data-account-photo", { photo: this.state.photo });
+                return await Server.post("/profile/photo", { photo: this.state.photo });
             } else {// logedIn as guest with localstorage
                 const data = {
                     ...this.props.UserData,
@@ -57,7 +57,7 @@ class ModalContent extends Component {
                         </button>
                     </div>
                     <div className="preventcopy photo-note">
-                        Your profile photo is visible to everyone, across Hoomer products. 
+                        Your profile photo is visible to everyone, across Mikta products. 
                     </div>
                 </div>
             </div>

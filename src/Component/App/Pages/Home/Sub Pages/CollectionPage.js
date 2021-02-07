@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../../../Actions';
+import Server from '../../../../../API/Server';
 import HomeCollection from './Collection';
 
 class CollectionPage extends Component {
+    async componentDidMount() {
+        if (this.props.DBLoginStatus) {
+            if (this.props.CollectionsData.length === 0) {
+                const api = await Server.get("/collections");
+                if (api.data !== 'failure') {
+                    this.props.handleDidMountCollectionsData(api.data);
+                }
+            }
+        }
+    };
     render() {
         if (this.props.CollectionsData.length === 0) {
             return <div className='likesContent'>No collections :(</div>;
@@ -31,8 +42,14 @@ class CollectionPage extends Component {
 
 const mapStateToProps = getState => {
     if (getState.DBLoginStatus) {//login with db
-        return { CollectionsData: getState.DBUserCollectionsData };
-    } return { CollectionsData: getState.CollectionsData };
+        return {
+            DBLoginStatus: getState.DBLoginStatus,//db login
+            CollectionsData: getState.DBUserCollectionsData
+        };
+    } return {
+        DBLoginStatus: getState.DBLoginStatus,//db login
+        CollectionsData: getState.CollectionsData
+    };
 };
 
 export default connect(mapStateToProps, actions)(CollectionPage);

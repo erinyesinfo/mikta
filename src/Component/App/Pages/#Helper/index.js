@@ -25,9 +25,7 @@ class ImageCard extends Component {
     };
     // like a photo
     handleLike = e => {
-        if (e) {
-            e.stopPropagation();
-        }
+        if (e) { e.stopPropagation(); }
         if (!this.props.DBLoginStatus && !this.props.LocalStorageLoginStatus) return alert('Attention, you have to be log in in order to like images!');
         const { img } = this.props;
         const foundLikedImage = this.props.LikesData.find(data => data.id === img.id);

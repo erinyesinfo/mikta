@@ -14,8 +14,8 @@ class Following extends Component {
             width: '40px', height: '40px', 
             marginRight: '10px', borderRadius: '50%'
         };
-        if (!this.props.LogedIn || this.props.FollowingData.length === 0) return null;
-        const Following = this.props.FollowingData.map(user => {
+        if (!this.props.LogedIn || this.props.FollowingsData.length === 0) return null;
+        const Following = this.props.FollowingsData.map(user => {
             return (
                 <div className='follow-div' key={user.id}>
                     <div className='follow-innerDiv'>
@@ -50,11 +50,11 @@ const mapStateToProps = getState => {
     if (getState.DBLoginStatus) {//login with db
         return {
             LogedIn: getState.DBLoginStatus,
-            FollowingData: getState.DBUserFollowingData
+            FollowingsData: getState.DBUserFollowingsData
         };
     } return {
         LogedIn: getState.LocalStorageLoginStatus,
-        FollowingData: getState.FollowingData
+        FollowingsData: getState.FollowingsData
     };
 };
   

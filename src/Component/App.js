@@ -28,30 +28,29 @@ class App extends Component {
   };
   handleCloseSpinner = () => this.setState({ spinner: false });
   async componentDidMount() {
-    const api = await Server.get("/user-login");
-    if (api.data === "success") {
-      this.props.handleDBloginStatus(true);
-      const apiData = await Server.post("/user-data", { id: '214082ee-34f0-4316-8881-a474d8c82d7b' });
-      if (apiData.data !== "failure") {
+    const cookies = new Cookies();
+    if (cookies.get("214082ee-34f0-4316-8881-a474d8c82d7b")) {
+      const api = await Server.get("/auth");
+      if (api.data !== "failure") {
+        this.props.handleDBloginStatus(true);
+        this.props.handleDidMountUserData(api.data);
         this.handleCloseSpinner();
-        this.props.handleDidMountUserData(apiData.data.user, apiData.data.profileImage);// profile user
-        this.props.handleDidMountSharedData(apiData.data.shared);// shared data
-        this.props.handleDidMountLikesData(apiData.data.likes);// likes data
-        this.props.handleDidMountCollectionsData(apiData.data.collection);// collection data
-        this.props.handleDidMountFollowingData(apiData.data.following);// following data
-      }
+        // fetch home navs length
+        this.props.handleGetNavsLength();
+      } else {
+        this.handleCloseSpinner();
+        if (!localStorage.getItem("f11cce98b5b5")) {
+          if (Object.keys(localStorage).length !== 0) {
+            localStorage.clear();
+          }
+        }
+        if (cookies.get("214082ee-34f0-4316-8881-a474d8c82d7b")) {
+          cookies.remove("214082ee-34f0-4316-8881-a474d8c82d7b");
+        }
+      };
     } else {
       this.handleCloseSpinner();
-      if (!localStorage.getItem("f11cce98b5b5")) {
-        if (Object.keys(localStorage).length !== 0) {
-          localStorage.clear();
-        }
-      }
-      const cookies = new Cookies();
-      if (cookies.get("214082ee-34f0-4316-8881-a474d8c82d7b")) {
-        cookies.remove("214082ee-34f0-4316-8881-a474d8c82d7b");
-      }
-    };
+    }
   };
   render() {
     if (this.state.spinner) return <div className="app-spinner"><Mikta /></div>;

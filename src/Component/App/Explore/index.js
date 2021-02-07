@@ -22,7 +22,7 @@ class Explore extends Component {
         }
         if (this.props.UnsplashSearchedPhotos.length > 0) {
             this.props.fetchUnsplashSearchedPhotos(true);
-            this.props.handleIsSearch(false);
+            this.props.handleIsSearchUnsplashPhotos(false);
         }
     };
     render() {

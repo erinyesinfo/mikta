@@ -1,4 +1,4 @@
-import { getUserFollowingData_type } from '../../Actions/types.js';
+import { getUserFollowingsData_type } from '../../Actions/types.js';
 
 const INIALSTATE = JSON.parse(localStorage.getItem("following")) || [
   {
@@ -194,7 +194,7 @@ const INIALSTATE = JSON.parse(localStorage.getItem("following")) || [
 
 export default (state = INIALSTATE, action) => {
   switch (action.type) {
-    case getUserFollowingData_type:
+    case getUserFollowingsData_type:
       return action.payload;
     default:
       return state;

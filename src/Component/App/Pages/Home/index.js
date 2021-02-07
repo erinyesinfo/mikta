@@ -37,7 +37,7 @@ class Home extends Component {
         }
         if (this.props.UnsplashSearchedPhotos.length > 0) {
             this.props.fetchUnsplashSearchedPhotos(true);
-            this.props.handleIsSearch(false);
+            this.props.handleIsSearchUnsplashPhotos(false);
         }
     };
     renderProfileInfo = () => {
@@ -132,19 +132,22 @@ class Home extends Component {
                     <div className='photos'>
                         <NavLink exact activeStyle={activeStyle}
                         className='navLink' to={`/home`}>
-                            <i className="fas fa-image"></i> &nbsp;Shared {this.props.SharedData.length}
+                            <i className="fas fa-image"></i> &nbsp;Shared&nbsp;
+                            {this.props.SharedData.length || this.props.NavsLength.shared || null}
                         </NavLink>
                     </div>
                     <div className='likes'>
                         <NavLink exact activeStyle={activeStyle}
                         className='navLink' to={`/home/likes`}>
-                            <i className="fas fa-heart"></i> &nbsp;Likes {this.props.LikesData.length}
+                            <i className="fas fa-heart"></i> &nbsp;Likes&nbsp;
+                            {this.props.LikesData.length || this.props.NavsLength.likes || null}
                         </NavLink>
                     </div>
                     <div className='collections'>
                         <NavLink exact activeStyle={activeStyle}
                         className='navLink' to={`/home/collections`}>
-                            <i className="fab fa-buffer"></i> &nbsp;Collections {this.props.CollectionsData.length}
+                            <i className="fab fa-buffer"></i> &nbsp;Collections&nbsp;
+                            {this.props.CollectionsData.length || this.props.NavsLength.collections || null}
                         </NavLink>
                     </div>
                 </div>
@@ -192,6 +195,7 @@ const mapStateToProps = getState => {
             SharedData: getState.DBUserSharedData,
             LikesData: getState.DBUserLikesData,
             CollectionsData: getState.DBUserCollectionsData,
+            NavsLength: getState.NavsLength,
             /* Username */
             UnsplashUserPhotos: getState.UnsplashUserPhotos,
             UnsplashUserLikes: getState.UnsplashUserLikes,
@@ -207,6 +211,7 @@ const mapStateToProps = getState => {
         SharedData: getState.SharedData,
         LikesData: getState.LikesData,
         CollectionsData: getState.CollectionsData,
+        NavsLength: getState.NavsLength,
         /* Username */
         UnsplashUserPhotos: getState.UnsplashUserPhotos,
         UnsplashUserLikes: getState.UnsplashUserLikes,

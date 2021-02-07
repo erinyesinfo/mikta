@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-
-/* image loader */
-import Img from 'react-image';
+import { Img } from 'react-image';/* image loader */
 
 // https://www.npmjs.com/package/react-image
 

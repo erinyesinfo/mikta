@@ -32,7 +32,7 @@ class UsersPhotos extends Component {
             return alert('Attention, you need to wait 3 sec before you click again on load more photos :)');
         }
         const { username } = this.props.UnsplashUser;
-        this.setState(st => ({ i: st.i + 1, delay: true }), () => this.props.fetchUserPhotos(username, this.state.i));
+        this.setState(st => ({ i: st.i + 1, delay: true }), () => this.props.fetchUnsplashUserPhotos(username, this.state.i));
         const timeOut = setTimeout(() => this.setState({ delay: false }, () => clearTimeout(timeOut)), 3000);
     };
     render() {

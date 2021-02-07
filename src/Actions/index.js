@@ -1,15 +1,15 @@
-import uuid from 'uuid/v4';//uuid generate random id's
+import { v4 as uuid } from 'uuid';//uuid generate random ids
 import Server from '../API/Server';// mikta server api
 import unsplash from '../API/Unsplash';// unsplash api
 
 import {
     /* Login with mongo db */
-    getDBLoginStatus_type, getDBUserData_type, getDBUserSharedData_type, getDBUserLikesData_type, getDBUserCollectionsData_type, getDBUserFollowingData_type,
+    getDBLoginStatus_type, getDBUserData_type, getDBUserSharedData_type, getDBUserLikesData_type, getDBUserCollectionsData_type, getDBUserFollowingsData_type, getNavsLength_type,
     /* Login as guest with localstorage */
-    getLocalStorageLoginStatus_type, getUserData_type, getUserSharedData_type, getUserLikesData_type, getUserCollectionsData_type, getUserFollowingData_type,
+    getLocalStorageLoginStatus_type, getUserData_type, getUserSharedData_type, getUserLikesData_type, getUserCollectionsData_type, getUserFollowingsData_type,
     /* All this methods works with both login methods(database, localStroge) */
     getHackerNewsApi_type, unsplash_getSearchedPhotos_type, getSearchedPhotosBool_type, getNewPost_UploadPhotos_type, getNewPost_type, unsplash_getPostSearchPhotos_type, getUserMessage_type, unsplash_getRandomPhotos_type, unsplash_getUser_type, unsplash_getUserPhotos_type, unsplash_getUserCollections_type, unsplash_getUserCollectionPhotos_type, getUserCollectionPhotos_type, unsplash_getUserLikes_type, getCollectionPhotosPreview_type, getComments_type,
-} from './types';
+ } from './types';
 
 /*
  * Login with mongo db
@@ -19,12 +19,13 @@ export const handleDBloginStatus = bool => dispatch => {
 };
 
 // update data, db user after the app render
-export const handleDidMountUserData = (userData, photo) => (dispatch, getState) => {
-    const data = {
+export const handleDidMountUserData = userData => (dispatch, getState) => {
+    let { profileImage } = userData;
+    let data = {
+        ...getState().DBUserData,
         ...userData,
-        profileImage: photo === '' ? getState().DBUserData.profileImage:photo,
+        profileImage: profileImage === '' ? getState().DBUserData.profileImage:profileImage
     };
-    localStorage.setItem("data-db", JSON.stringify(data));
     dispatch({ type: getDBUserData_type, payload: data });
 };
 
@@ -69,7 +70,7 @@ export const handleUpdateShareDataDB = (formValues, imageData, id, description, 
         localStorage.setItem("shareData-db", JSON.stringify(moreData));
         dispatch({ type: getDBUserSharedData_type, payload: moreData });
         // save to db
-        return await Server.post("/data-shared", moreData);
+        return await Server.post("/shared", moreData);
     }
     // share image data, only two argument(description typeof is string, img typeof is object)
     else if ((typeof(formValues) === "string" || typeof(formValues) === 'undefined') && typeof(imageData) === 'object') {
@@ -117,7 +118,7 @@ export const handleUpdateShareDataDB = (formValues, imageData, id, description, 
         window.localStorage.setItem("shareData-db", JSON.stringify(uniqueData));
         dispatch({ type: getDBUserSharedData_type, payload: uniqueData });
         // save to db
-        return await Server.post("/data-shared", uniqueData);
+        return await Server.post("/shared", uniqueData);
     }
     // edit shared image data, only two argument(description typeof is string, id typeof is string)
     else if (typeof(formValues) === "string" && typeof(imageData) === 'string') {
@@ -136,7 +137,7 @@ export const handleUpdateShareDataDB = (formValues, imageData, id, description, 
         localStorage.setItem("shareData-db", JSON.stringify(edited));
         dispatch({ type: getDBUserSharedData_type, payload: edited });
         // save to db
-        return await Server.post("/data-shared", edited);
+        return await Server.post("/shared", edited);
     }
     // remove shared data, only one argument(id typeof string)    
     const _id = formValues;
@@ -146,7 +147,7 @@ export const handleUpdateShareDataDB = (formValues, imageData, id, description, 
     localStorage.setItem("shareData-db", JSON.stringify(removed));
     dispatch({ type: getDBUserSharedData_type, payload: removed });
     // save to db
-    await Server.post("/data-shared", removed);
+    await Server.post("/shared", removed);
 };
 
 // liked images, db user after the app render
@@ -165,7 +166,7 @@ export const handleUpdateLikesDataDB = imageData => async (dispatch, getState) =
         localStorage.setItem("likesData-db", JSON.stringify(removed));
         dispatch({ type: getDBUserLikesData_type, payload: removed });
         // save to db
-        return await Server.post("/data-likes", removed);
+        return await Server.post("/likes", removed);
     }
     // typeof(imageData) === 'object' add new image
     let filterImageData = {
@@ -213,7 +214,7 @@ export const handleUpdateLikesDataDB = imageData => async (dispatch, getState) =
     localStorage.setItem("likesData-db", JSON.stringify(data));
     dispatch({ type: getDBUserLikesData_type, payload: data });
     // save to db
-    return await Server.post("/data-likes", data);
+    return await Server.post("/likes", data);
 };
 
 // collection images, db user after the app render
@@ -247,7 +248,7 @@ export const handleUpdateCollectionsDataDB = (name, description, img, thisData, 
         localStorage.setItem("collectionData-db", JSON.stringify(removed));
         dispatch({ type: getDBUserCollectionsData_type, payload: removed });
         // save to db
-        return await Server.post("/data-collection", removed);
+        return await Server.post("/collections", removed);
     } else if (description === false && typeof(img) === 'string') {
         // img === src img(string),
         const add = getState().DBUserCollectionsData.map(data => {
@@ -396,7 +397,7 @@ export const handleUpdateCollectionsDataDB = (name, description, img, thisData, 
         localStorage.setItem("collectionData-db", JSON.stringify(add));
         dispatch({ type: getDBUserCollectionsData_type, payload: add });
         // save to db
-        return await Server.post("/data-collection", add);
+        return await Server.post("/collections", add);
     }
 
     // little trick to edit(just to prevent writing another function)
@@ -410,7 +411,7 @@ export const handleUpdateCollectionsDataDB = (name, description, img, thisData, 
         localStorage.setItem("collectionData-db", JSON.stringify(edit));
         dispatch({ type: getDBUserCollectionsData_type, payload: edit });
         // save to db
-        return await Server.post("/data-collection", edit);
+        return await Server.post("/collections", edit);
     }
 
     // if name is an object trick this to delete(just to prevent writing another function)
@@ -419,7 +420,7 @@ export const handleUpdateCollectionsDataDB = (name, description, img, thisData, 
         localStorage.setItem("collectionData-db", JSON.stringify(removed));
         dispatch({ type: getUserCollectionsData_type, payload: removed });
         // save to db
-        await Server.post("/data-collection", removed);
+        await Server.post("/collections", removed);
         return window.location.href = '/home/collections';
     }
 
@@ -491,30 +492,38 @@ export const handleUpdateCollectionsDataDB = (name, description, img, thisData, 
     localStorage.setItem("collectionData-db", JSON.stringify(isUnique));
     dispatch({ type: getDBUserCollectionsData_type, payload: isUnique });
     // save to db
-    await Server.post("/data-collection", isUnique);
+    await Server.post("/collections", isUnique);
 };
 
 // following unsplash users, db user after the app render
-export const handleDidMountFollowingData = followingData => dispatch => {
-    const data = followingData;
-    localStorage.setItem("following-db", JSON.stringify(data));
-    return dispatch({ type: getDBUserFollowingData_type, payload: data });
+export const handleDidMountFollowingsData = followingData => dispatch => {
+    localStorage.setItem("following-db", JSON.stringify(followingData));
+    return dispatch({ type: getDBUserFollowingsData_type, payload: followingData });
 };
 // Following: add, remove
-export const handleUpdataFollowingDataDB = (image, bool) => async (dispatch, getState) => {
+export const handleUpdateFollowingsDataDB = (image, bool) => async (dispatch, getState) => {
     // based on second arg if it true add following to db
-    if (getState().DBLogedIn === true && bool === true) {
-        const data = handleUniqueData(getState().DBUserFollowingData, image);
+    if (bool === true) {
+        const data = handleUniqueData(getState().DBUserFollowingsData, image);
         localStorage.setItem("following-db", JSON.stringify(data));
-        dispatch({ type: getDBUserFollowingData_type, payload: data });
+        dispatch({ type: getDBUserFollowingsData_type, payload: data });
         // save to db
-        return await Server.post("/data-following", data);
+        return await Server.post("/followings", data);
     }
     // based on second arg if it false remove folowing to db
-    const removed = getState().DBUserFollowingData.filter(data => data.id !== image.id);
+    const removed = getState().DBUserFollowingsData.filter(data => data.id !== image.id);
     localStorage.setItem("following-db", JSON.stringify(removed));
-    dispatch({ type: getDBUserFollowingData_type, payload: removed });
-    return await Server.post("/data-following", removed);
+    dispatch({ type: getDBUserFollowingsData_type, payload: removed });
+    return await Server.post("/followings", removed);
+};
+
+// Get home navs length
+export const handleGetNavsLength = () => async dispatch => {
+    const api = await Server.get("/length");
+    if (api.data !== 'failure') {
+        localStorage.setItem("navs-length", JSON.stringify(api.data));
+        dispatch({ type: getNavsLength_type, payload: api.data });
+    }
 };
 
 
@@ -962,17 +971,17 @@ export const handleUpdateCollectionsData = (name, description, img, thisData, fu
 };
 
 // Following: add, remove
-export const handleUpdateFollowingData = (image, bool) => async (dispatch, getState) => {
-    if (getState().DBLogedIn === false && bool === true) {// based on localstorage
+export const handleUpdateFollowingsData = (image, bool) => async (dispatch, getState) => {
+    if (bool === true) {// based on localstorage
         // based on second arg if it true add following
-        const data = handleUniqueData(getState().FollowingData, image);
+        const data = handleUniqueData(getState().FollowingsData, image);
         localStorage.setItem("following", JSON.stringify(data));
-        return dispatch({ type: getUserFollowingData_type, payload: data });
+        return dispatch({ type: getUserFollowingsData_type, payload: data });
     }
     // remove based on second arg if it false remove following
-    const removed = getState().FollowingData.filter(data => data.id !== image.id);
+    const removed = getState().FollowingsData.filter(data => data.id !== image.id);
     localStorage.setItem("following", JSON.stringify(removed) );
-    return dispatch({ type: getUserFollowingData_type, payload: removed });
+    return dispatch({ type: getUserFollowingsData_type, payload: removed });
 };
 
 const handleUniqueData = (stateData, newData) => {

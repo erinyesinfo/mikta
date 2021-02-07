@@ -63,7 +63,7 @@ class Password extends Component {
         }
         await this.handleShowSpinner();
         const data = { currentPassword, password };
-        const api = await Server.post('/data-account-password', data);
+        const api = await Server.post('/profile/password', data);
         if (api.data !== "success") {
             if (api.data === "Your new password must be different from your previous password.") {
                 return this.setState({ error: "Your new password must be different from your previous password." }, this.handleCloseSpinner);

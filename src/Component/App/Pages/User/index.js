@@ -27,7 +27,7 @@ class Username extends Component {
         }
         if (this.props.UnsplashSearchedPhotos.length > 0) {
             this.props.fetchUnsplashSearchedPhotos(true);
-            this.props.handleIsSearch(false);
+            this.props.handleIsSearchUnsplashPhotos(false);
         }
     };
     componentDidUpdate() {
@@ -61,17 +61,17 @@ class Username extends Component {
             return alert('Attention, you have to be log in in order to follow users!');
         }
         const { UnsplashUser } = this.props;
-        const isDuplicate = this.props.FollowingData.find(user => user.id === UnsplashUser.id);
+        const isDuplicate = this.props.FollowingsData.find(user => user.id === UnsplashUser.id);
         if (this.props.DBLoginStatus) {//db
-            if (isDuplicate) return this.props.handleUpdataFollowingDataDB(UnsplashUser, false);
-            return this.props.handleUpdataFollowingDataDB(UnsplashUser, true);
+            if (isDuplicate) return this.props.handleUpdateFollowingsDataDB(UnsplashUser, false);
+            return this.props.handleUpdateFollowingsDataDB(UnsplashUser, true);
         }
-        if (isDuplicate) return this.props.handleUpdataFollowingData(UnsplashUser, false);
-        return this.props.handleUpdataFollowingData(UnsplashUser, true);
+        if (isDuplicate) return this.props.handleUpdateFollowingsData(UnsplashUser, false);
+        return this.props.handleUpdateFollowingsData(UnsplashUser, true);
     };
     renderUserProfileInfo = () => {
         const { id, name, location, portfolio_url, bio, profile_image } = this.props.UnsplashUser;
-        const isDuplicate = this.props.FollowingData.find(data => data.id === id);
+        const isDuplicate = this.props.FollowingsData.find(data => data.id === id);
         let emtyObject = {};
         return (
             <div className='allUserInfo'>
@@ -205,7 +205,7 @@ const mapStateToProps = getState => {
         return {
             DBLoginStatus: getState.DBLoginStatus,
             LocalStorageLoginStatus: getState.LocalStorageLoginStatus,
-            FollowingData: getState.DBUserFollowingData,
+            FollowingsData: getState.DBUserFollowingsData,
             // search
             UnsplashSearchedPhotos: getState.UnsplashSearchedPhotos,
             UnsplashUser: getState.UnsplashUser
@@ -213,7 +213,7 @@ const mapStateToProps = getState => {
     } return {
         DBLoginStatus: getState.DBLoginStatus,
         LocalStorageLoginStatus: getState.LocalStorageLoginStatus,
-        FollowingData: getState.FollowingData,
+        FollowingsData: getState.FollowingsData,
         // search
         UnsplashSearchedPhotos: getState.UnsplashSearchedPhotos,
         UnsplashUser: getState.UnsplashUser

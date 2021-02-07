@@ -154,7 +154,7 @@ class Profile extends Component {
             let dbData = {
                 firstname, lastname, email, username, portfolio, location, instagramUsername, twitterUsername, bio, interests, checkMessage
             };
-            const api = await Server.post("/data-account", dbData);
+            const api = await Server.post("/profile", dbData);
             if (api.data === "success") {
                 this.setState({ success: 'Account information has been changed successfully' }, this.handleCloseSpinner);
                 const timeOut = setTimeout(() => {

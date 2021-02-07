@@ -9,7 +9,8 @@ import DBUserData from './DB/DBUserData';
 import DBUserSharedData from './DB/DBUserSharedData';
 import DBUserLikesData from './DB/DBUserLikesData';
 import DBUserCollectionsData from './DB/DBUserCollectionsData';
-import DBUserFollowingData from './DB/DBUserFollowingData';
+import DBUserFollowingsData from './DB/DBUserFollowingsData';
+import NavsLength from './DB/NavsLength';
 
 /*
  * Login as guest with localstorage
@@ -19,7 +20,7 @@ import UserData from './LocalStroage/UserData';//User Data
 import SharedData from './LocalStroage/SharedData';//Shared Data
 import LikesData from './LocalStroage/LikesData';//Likes Data
 import CollectionsData from './LocalStroage/CollectionsData';//Collection
-import FollowingData from './LocalStroage/FollowingData';//Following Users
+import FollowingsData from './LocalStroage/FollowingsData';//Following Users
 
 /*
  *
@@ -51,7 +52,8 @@ export default combineReducers({
     DBUserSharedData,
     DBUserLikesData,
     DBUserCollectionsData,
-    DBUserFollowingData,
+    DBUserFollowingsData,
+    NavsLength,
     /* Login as guest with localstorage */ 
     LocalStorageLoginStatus,
     UserData,
@@ -59,7 +61,7 @@ export default combineReducers({
     LikesData,
     CollectionsData,
     CollectionPhotos,
-    FollowingData,
+    FollowingsData,
     /* All this methods works with both login methods(database, localStroge) */
     HackerNews,
     UnsplashSearchedPhotos,

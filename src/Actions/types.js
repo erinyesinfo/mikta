@@ -6,7 +6,8 @@ export const getDBUserData_type = 'getDBUserData_type';//User Data
 export const getDBUserSharedData_type = 'getDBUserSharedData_type';//Shared Data
 export const getDBUserLikesData_type = 'getDBUserLikesData_type';//Likes Data
 export const getDBUserCollectionsData_type = 'getDBUserCollectionsData_type';//Collection Data
-export const getDBUserFollowingData_type = 'getDBUserFollowingData_type';//Following Data
+export const getDBUserFollowingsData_type = 'getDBUserFollowingsData_type';//Following Data
+export const getNavsLength_type = 'getNavsLength_type';//Navs Length
 
 
 /*
@@ -17,7 +18,7 @@ export const getUserData_type = 'getUserData_type';//User Data
 export const getUserSharedData_type = 'getUserSharedData_type';//Shared Data
 export const getUserLikesData_type = 'getUserLikesData_type';//Likes Data
 export const getUserCollectionsData_type = 'getUserCollectionsData_type';//Collection Data
-export const getUserFollowingData_type = 'getUserFollowingData_type';//Following Data
+export const getUserFollowingsData_type = 'getUserFollowingsData_type';//Following Data
 
 
 /*
